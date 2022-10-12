@@ -13,7 +13,6 @@ public class ArrayTests {
   public void testReverseInPlaceLengthTwo() {
     int[] input = {0, 1};
     ArrayExamples.reverseInPlace(input);
-    System.out.println("ReverseInPlace: " + input[0] + " " + input[1]);
     assertArrayEquals(new int[] {1, 0}, input);
   }
 
@@ -26,8 +25,12 @@ public class ArrayTests {
   @Test
   public void testReversedLengthTwo() {
     int[] input = {0, 1};
-    int[] output = ArrayExamples.reversed(input);
-    System.out.println("Reversed: " + output[0] + " " + output[1]);
-    assertArrayEquals(new int[] {1, 0}, output);
+    assertArrayEquals(new int[] {1, 0}, ArrayExamples.reversed(input));
+  }
+
+  @Test
+  public void testAverageWithoutLowestDuplicateLowest() {
+    double[] input = {1, 2, 1};
+    assertTrue(1.5 == ArrayExamples.averageWithoutLowest(input));
   }
 }
